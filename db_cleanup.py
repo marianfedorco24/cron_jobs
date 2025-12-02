@@ -2,8 +2,10 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 import os, sqlite3
+from pathlib import Path
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+load_dotenv(BASE_DIR / ".env")
 
 LOG_PATH = os.getenv("LOG_PATH")
 STRAVA_API_DB_PATH = os.getenv("STRAVA_API_DB_PATH")
