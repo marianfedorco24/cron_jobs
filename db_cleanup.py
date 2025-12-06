@@ -7,9 +7,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
 
-LOG_PATH = os.getenv("LOG_PATH")
-STRAVA_API_DB_PATH = os.getenv("STRAVA_API_DB_PATH")
-SKOLAONLINE_API_DB_PATH = os.getenv("SKOLAONLINE_API_DB_PATH")
+LOG_PATH = "/root/projects/cron_jobs/db_cleanup.log"
+STRAVA_API_DB_PATH = "/root/projects/hosting/API/strava_api/strava_api_cache.db"
+SKOLAONLINE_API_DB_PATH = "/root/projects/hosting/API/skolaonline_api/skolaonline_api_cache.db"
 
 def get_db(db_path):
     conn = sqlite3.connect(db_path, timeout=5)
